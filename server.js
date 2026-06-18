@@ -44,7 +44,11 @@ const transporter = nodemailer.createTransport({
 
 // ─── Health Check ─────────────────────────────────────────────────────────────
 app.get("/", (req, res) => {
-  res.json({ status: "Form API is running." });
+  res.json({ status: "Form API is running.", version: "1.0.1" });
+});
+
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
 });
 
 // ─── POST /submit ─────────────────────────────────────────────────────────────
